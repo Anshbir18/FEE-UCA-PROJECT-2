@@ -47,10 +47,17 @@ To get the project up and running on your local machine, follow these steps:
    ```bash
    git clone https://github.com/yourusername/flexbox-froggy-clone.git
 
-1. Navigate to the project directory:
+2. Navigate to the project directory:
 
    ```bash
    cd flexbox-froggy-clone
+
+3. Navigate to the auth folder:
+
+   ```bash
+   cd auth
+
+4. Run the index.html file and Enjoy
 
 
 ## Usage
