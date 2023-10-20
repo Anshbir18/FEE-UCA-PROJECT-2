@@ -1,269 +1,275 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka&family=Source+Code+Pro:ital,wght@0,300;0,400;1,200;1,300;1,400;1,500&display=swap');
-body{
-    background-color: rgb(67, 160, 71);
-    color: rgba(255,255,255,0.8);
-    margin: 0;
-    padding: 0;
+@import url("https://fonts.googleapis.com/css2?family=Fredoka&family=Source+Code+Pro:ital,wght@0,300;0,400;1,200;1,300;1,400;1,500&display=swap");
+body {
+  background-color: rgb(67, 160, 71);
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  padding: 0;
 }
 
-.app{
-    display: flex;
+.app {
+  display: flex;
 }
 
-h1{
-    text-transform: uppercase;
-    font-size: 28px;
-    font-family: 'Fredoka', sans-serif;
+h1 {
+  text-transform: uppercase;
+  font-size: 28px;
+  font-family: "Fredoka", sans-serif;
 }
 
-p{
-    font-family: 'PT Sans', sans-serif;
+p {
+  font-family: "PT Sans", sans-serif;
 }
 
-.help{
-    font-family: 'Source Code Pro', monospace;
-    background-color: rgba(255,255,255,0.2);
-    border-bottom: 1px solid rgba(255,255,255,0.8);
+.help {
+  font-family: "Source Code Pro", monospace;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
 }
 
-#instruction{
-    padding: 30px;
-    width: 50vw;
+#instruction {
+  padding: 30px;
+  width: 50vw;
 }
 
-#pond{
-    position: relative;
-    background-color: rgb(31,87,104);
-    width:50vw;
-    height:50vw;
-    border-bottom-left-radius: 30px;
-    overflow: hidden;
-    /* adding height width constrains on the ponds */
-    min-width: 300px;
-    min-height: 300px;
+#pond {
+  position: relative;
+  background-color: rgb(31, 87, 104);
+  width: 50vw;
+  height: 50vw;
+  border-bottom-left-radius: 30px;
+  overflow: hidden;
+  /* adding height width constrains on the ponds */
+  min-width: 300px;
+  min-height: 300px;
 }
 
+.editor {
+  position: relative;
+  background-color: rgb(224, 224, 224);
+  height: 260px;
+  /* width: 500px; */
+  padding: 10px 10px 10px 40px;
 
-
-.editor{
-    position: relative;
-    background-color: rgb(224,224,224);
-    height: 260px;
-    /* width: 500px; */
-    padding: 10px 10px 10px 40px;
-
-    border-radius: 4px;
-    font-family: 'Source Code Pro', monospace;
-    font-size: 16px;
-    line-height: 1.5;
-    color: rgb(119,119,119);
-    overflow: hidden;
+  border-radius: 4px;
+  font-family: "Source Code Pro", monospace;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgb(119, 119, 119);
+  overflow: hidden;
 }
 
-.line-number{
-    position: absolute;
-    top:0;
-    left:0;
-    background-color: rgb(153,153,153);
-    color: rgb(213,213,213);
-    padding: 10px 6px;
-    height: 100%;
-    text-align: right;
+.line-number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(153, 153, 153);
+  color: rgb(213, 213, 213);
+  padding: 10px 6px;
+  height: 100%;
+  text-align: right;
 }
 
-pre{
-    margin: 0;
-    
+pre {
+  margin: 0;
 }
 textarea {
-    height: 44px;
-    
-    border: none;
-    outline: none;
-    resize: none;
-    overflow: auto;
-    margin-left: 26px;
-    width: 70%;
-}
-#btn{
-    background-color: rgb(209,22,6);
-    border: none;
-    border-radius: 4px;
-    font-family: 'PT Sans',sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    color: rgb(255,255,255);
-    padding: 5px 10px;
-    right:15px;
-    bottom: 15px;
-    position: absolute;
-    
-}
+  height: 44px;
 
-#forefront{
-    position: absolute;
-    z-index: 1;
-    left: 0;
-    right: 0;
-    width: 95%;
-    height: 95%;
-    padding: 2.5%;
-    display: flex;
+  border: none;
+  outline: none;
+  resize: none;
+  overflow: auto;
+  margin-left: 26px;
+  width: 70%;
+}
+.btn {
+  background-color: rgb(209, 22, 6);
+  border: none;
+  border-radius: 4px;
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  right: 15px;
+  bottom: 15px;
+  position: absolute;
 }
 
-
-#background{
-    position: absolute;
-
-    left: 0;
-    right: 0;
-    width: 95%;
-    height: 95%;
-    padding: 2.5%;
-
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+#forefront {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  width: 95%;
+  height: 95%;
+  padding: 2.5%;
+  display: flex;
 }
 
-.lilly-container , .frogContainer{
-    width: 20%;
-    height: 20%;
+#background {
+  position: absolute;
 
-}
-.lilly,.frog{
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
+  left: 0;
+  right: 0;
+  width: 95%;
+  height: 95%;
+  padding: 2.5%;
 
-.lilly.green{
-    background-image: url(./assets/images/lilypad-green.svg);
-}
-.lilly.red{
-    background-image: url(./assets/images/lilypad-red.svg);
-}
-.lilly.yellow{
-    background-image: url(./assets/images/lilypad-yellow.svg);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
-
-.frog.green{
-    background-image: url(./assets/images/frog-green.svg);
+.lilly-container,
+.frogContainer {
+  width: 20%;
+  height: 20%;
+}
+.lilly,
+.frog {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
-.frog.red{
-    background-image: url(./assets/images/frog-red.svg);
+.lilly.green {
+  background-image: url(./assets/images/lilypad-green.svg);
 }
-.frog.yellow{
-    background-image: url(./assets/images/frog-yellow.svg);
+.lilly.red {
+  background-image: url(./assets/images/lilypad-red.svg);
 }
-
-.auth_letter_div{
-    position: absolute;
-    bottom: 25px;
-    background-color:  rgb(31,87,104);
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    border-radius: 50px;
-    height: 5%;
-    cursor: pointer;
+.lilly.yellow {
+  background-image: url(./assets/images/lilypad-yellow.svg);
 }
 
-.auth_letter{
-    font-size: 1.7rem;
-    margin-top: 15px;
+.frog.green {
+  background-image: url(./assets/images/frog-green.svg);
 }
 
+.frog.red {
+  background-image: url(./assets/images/frog-red.svg);
+}
+.frog.yellow {
+  background-image: url(./assets/images/frog-yellow.svg);
+}
 
+.auth_letter_div {
+  position: absolute;
+  bottom: 25px;
+  background-color: rgb(31, 87, 104);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  border-radius: 50px;
+  height: 5%;
+  cursor: pointer;
+}
+
+.auth_letter {
+  font-size: 1.7rem;
+  margin-top: 15px;
+}
 
 /* CSS for the glowing and shaking effects */
 .error-glow {
-    border: 2px solid red;
-    box-shadow: 0 0 5px red;
-    animation: glow 0.5s infinite alternate;
+  border: 2px solid red;
+  box-shadow: 0 0 5px red;
+  animation: glow 0.5s infinite alternate;
 }
 
 @keyframes glow {
-    0% {
-        border-color: red;
-        box-shadow: 0 0 5px red;
-    }
-    100% {
-        border-color: transparent;
-        box-shadow: none;
-    }
+  0% {
+    border-color: red;
+    box-shadow: 0 0 5px red;
+  }
+  100% {
+    border-color: transparent;
+    box-shadow: none;
+  }
 }
 
 .error-shake {
-    animation: shake 0.5s ease-in-out infinite;
+  animation: shake 0.5s ease-in-out infinite;
 }
 
 @keyframes shake {
-    0%, 100% {
-        transform: translateX(0);
-    }
-    25%, 75% {
-        transform: translateX(-5px);
-    }
-    50% {
-        transform: translateX(5px);
-    }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25%,
+  75% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
 }
+@media screen and (min-width: 769px) and (max-width: 820px) {
+  .app {
+    display: block;
+    align-items: center;
+  }
+  #instruction {
+    width: 90%; /* Take full width on small screens */
+  }
 
-
-
+  #pond {
+    width: 90%; /* Take full width on small screens */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 /* Add media queries for responsiveness */
 @media screen and (max-width: 768px) {
-    .app {
-        flex-direction: column; /* Stack elements vertically on small screens */
-    }
+  .app {
+    flex-direction: column; /* Stack elements vertically on small screens */
+  }
 
-    #instruction {
-        width: 1250px; /* Take full width on small screens */
-    }
+  #instruction {
+    width: 80%; /* Take full width on small screens */
+  }
 
-    #pond {
-        width: 100%; /* Take full width on small screens */
-    }
+  #pond {
+    width: 100%; /* Take full width on small screens */
+  }
 
-    .editor {
-        width: 50%; /* Take full width on small screens */
-    }
+  .editor {
+    width: 80%; /* Take full width on small screens */
+  }
 
-    .lilly-container,
-    .frogContainer {
-        width: 20%; /* Two elements per row on small screens */
-    }
+  .lilly-container,
+  .frogContainer {
+    width: 20%; /* Two elements per row on small screens */
+  }
 
-    /* Adjust font sizes or other styles for small screens */
-    h1 {
-        font-size: 24px;
-    }
+  /* Adjust font sizes or other styles for small screens */
+  h1 {
+    font-size: 24px;
+  }
+  .auth_letter_div {
+    top: 25px;
+    right: 20px;
+    z-index: 100;
+  }
 }
 
-
-
-
-
-
-
 .popup-menu {
-    display: none;
-    position: absolute;
-    top: 30px;
-    right: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(182, 49, 49, 0.1);
+  display: none;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(182, 49, 49, 0.1);
 }
 
 .auth_letter_div:hover #popupMenu {
-    display: block;
+  display: block;
 }

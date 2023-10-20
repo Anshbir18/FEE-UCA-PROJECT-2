@@ -1,14 +1,30 @@
-const buttonElement = document.getElementById("btn");
+const buttonElement = document.getElementsByClassName("btn")[0];
 const textAreaElement = document.querySelector('textarea');
 
 document.getElementById("auth_letter").innerHTML = localStorage.getItem("firstLetter").toUpperCase();
 
+// function displayError(message) {
+//     // Display an error message to the user
+//     const errorMessage = document.createElement("div");
+//     errorMessage.className = "error-message";
+//     errorMessage.textContent = message;
+//     textAreaElement.insertAdjacentElement("afterend", errorMessage);
+
+//     // Apply error classes for visual feedback
+//     textAreaElement.classList.add('error-glow', 'error-shake');
+
+//     // Remove error classes and the error message after 1 second
+//     setTimeout(() => {
+//         textAreaElement.classList.remove('error-glow', 'error-shake');
+//         errorMessage.remove();
+//     }, 1000);
+// }
 function displayError(message) {
     // Display an error message to the user
     const errorMessage = document.createElement("div");
     errorMessage.className = "error-message";
     errorMessage.textContent = message;
-    textAreaElement.insertAdjacentElement("afterend", errorMessage);
+    textAreaElement.parentNode.insertBefore(errorMessage, textAreaElement);
 
     // Apply error classes for visual feedback
     textAreaElement.classList.add('error-glow', 'error-shake');
@@ -19,6 +35,7 @@ function displayError(message) {
         errorMessage.remove();
     }, 1000);
 }
+
 
 function addCSS() {
     const css = textAreaElement.value;
